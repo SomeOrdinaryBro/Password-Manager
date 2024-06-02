@@ -1,0 +1,84 @@
+/* Resetting default browser styles */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif; /* Default font family */
+    color: #333; /* Default text color */
+    background-color: #fff; /* Default background color */
+}
+
+a {
+    color: #007bff; /* Link color */
+    text-decoration: none; /* Remove default underline */
+}
+
+h1 {
+    text-align: center; /* Center align h1 */
+    font-size: 32px; /* Adjust h1 font size */
+    margin-top: 40px; /* Add margin top to h1 */
+}
+
+h2 {
+    font-size: 24px; /* Adjust h2 font size */
+    margin-top: 30px; /* Add margin top to h2 */
+}
+
+h3 {
+    font-size: 20px; /* Adjust h3 font size */
+    margin-top: 25px; /* Add margin top to h3 */
+}
+
+p {
+    font-size: 16px; /* Adjust paragraph font size */
+    margin-bottom: 20px; /* Add margin bottom to paragraphs */
+}
+
+/* Container styles */
+.container {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    flex-direction: column; /* Stack items vertically */
+    margin-top: 20px; /* Add default margin top */
+    padding: 0 20px; /* Add default padding */
+}
+
+/* Additional styles for lists */
+ul {
+    padding-left: 20px; /* Add default padding for unordered lists */
+}
+
+/* Example and documentation columns */
+.examples {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Distribute space evenly between items */
+    width: 80%; /* Set width to 80% of the container */
+    margin-top: 20px; /* Add margin top */
+}
+
+.column {
+    flex: 1; /* Take up equal space in flex container */
+    text-align: center; /* Center align content within column */
+}
+
+.files {
+    margin-top: 20px; /* Add margin top */
+    padding-left: 0; /* Remove default padding */
+    list-style-type: none; /* Remove default list bullets */
+}
+
+.files a {
+    display: block; /* Display links as block elements */
+    margin-bottom: 5px; /* Add margin bottom to links */
+    text-align: center; /* Center align links */
+}
+
+/* Footer styles */
+home-link {
+    font-weight: bold;
+    text-align: center;
+}
