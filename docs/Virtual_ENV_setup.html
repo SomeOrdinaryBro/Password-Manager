@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Setup a Virtual Environment in Python</title>
+    <style>
+        body {
+            line-height: 1.6;
+            margin: 20px;
+        }
+        
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        
+        .bold-code {
+            font-weight: bold;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .home-link {
+            margin-top: 20px;
+        }
+        
+        .home-link a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        
+        .home-link a:hover {
+            text-decoration: underline;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>How to Setup a Virtual Environment in Python</h1>
+    <p>A virtual environment is a tool that helps to keep dependencies required by different projects in separate places, by creating virtual Python environments for them. It solves the "Project X depends on version 1.x but, Project Y needs 4.x" dilemma and keeps your global site-packages directory clean and manageable.</p>
+
+    <h2>Step-by-Step Guide</h2>
+
+    <h3>Step 1: Install virtualenv</h3>
+    <p>If you haven't installed <code>virtualenv</code> yet, you can do so using <code>pip</code> (Globally install this) :</p>
+    <pre><code class="bold-code">pip install virtualenv</code></pre>
+
+    <h3>Step 2: Create a Virtual Environment</h3>
+    <p>Create a new directory for your project (if you haven't already), navigate to it, and run:</p>
+    <pre><code class="bold-code">virtualenv env</code></pre>
+    <p>This will create a directory named <code>env</code> in your project folder that contains the virtual environment.</p>
+
+    <h3>Step 3: Activate the Virtual Environment</h3>
+    <p>To start using the virtual environment, you need to activate it. The command differs based on your operating system:</p>
+    <ul>
+        <li><strong>Windows (cmd &amp; powershell):</strong></li>
+        <pre><code class="bold-code">.\env\Scripts\activate</code></pre>
+        <li><strong>macOS &amp; Linux or Bash:</strong></li>
+        <pre><code class="bold-code">source env/bin/activate</code></pre>
+    </ul>
+    <p>Once activated, your command prompt will change to indicate that you're now working within the virtual environment.</p>
+
+    <h3>Step 4: Install Packages</h3>
+    <p>Now that the virtual environment is activated, you can install packages using <code>pip</code>. For example:</p>
+    <pre><code class="bold-code">pip install requests</code></pre>
+
+    <h3>Step 5: Deactivate the Virtual Environment</h3>
+    <p>When you're done working in the virtual environment, you can deactivate it by simply running:</p>
+    <pre><code class="bold-code">deactivate</code></pre>
+    <p>Your command prompt will revert to its usual state, indicating that you are no longer working in the virtual environment.</p>
+
+    <h3>Additional Tips</h3>
+    <ul>
+        <li>To create a requirements file that lists all the dependencies for your project, run: <code class="bold-code">pip freeze > requirements.txt</code></li>
+        <li>To install dependencies listed in a requirements file, run: <code class="bold-code">pip install -r requirements.txt</code></li>
+    </ul>
+    <footer class="home-link">
+        <a href="../index.html">Click here to go back to Home</a>
+    </footer>
+</body>
+</html>

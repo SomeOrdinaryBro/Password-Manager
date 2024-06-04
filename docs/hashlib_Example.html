@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hashlib Library Examples</title>
+    <style>
+        body {
+            line-height: 1.6;
+            margin: 20px;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        .output {
+            background-color: #e8e8e8;
+            padding: 5px;
+            border-left: 4px solid #ccc;
+            margin: 10px 0;
+        }
+        .note {
+            background-color: #fffbcc;
+            padding: 10px;
+            border-left: 4px solid #ffeb3b;
+            margin: 10px 0;
+        }
+        .home-link {
+            margin-top: 20px;
+        }
+        
+        .home-link a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        
+        .home-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Using the <code>hashlib</code> Library in Python</h1>
+
+    <p>The <code>hashlib</code> library in Python provides various hashing algorithms. Let's explore how to use them.</p>
+
+    <h2>Encoding a Message</h2>
+    <p>First, we need to encode our message into bytes using UTF-8 encoding:</p>
+    <pre><code>import hashlib
+
+# encode it to bytes using UTF-8 encoding
+message = "Some text to hash".encode()</code></pre>
+
+    <h2>Using Different Hash Algorithms</h2>
+
+    <h3>MD5</h3>
+    <p>MD5 is an older and less secure hashing algorithm. It's not recommended for use due to its vulnerability to collisions:</p>
+    <pre><code># hash with MD5 (not recommended)
+print("MD5:", hashlib.md5(message).hexdigest())</code></pre>
+    <div class="output">Output: MD5: 3eecc85e6440899b28a9ea6d8369f01c</div>
+    <div class="note">Note: MD5 is pretty obsolete now, and you should never use it, as it isn't collision-resistant.</div>
+
+    <h3>SHA-2</h3>
+    <p>SHA-2 includes SHA-256 and SHA-512, which are more secure and commonly used:</p>
+    <pre><code># hash with SHA-2 (SHA-256 & SHA-512)
+print("SHA-256:", hashlib.sha256(message).hexdigest())
+print("SHA-512:", hashlib.sha512(message).hexdigest())</code></pre>
+    <div class="output">Output: 
+        <br>SHA-256: 7a86e0e93e6aa6cf49f19368ca7242e24640a988ac8e5508dfcede39fa53faa2
+        <br>SHA-512: 96fa772f72678c85bbd5d23b66d51d50f8f9824a0aba0ded624ab61fe8b602bf4e3611075fe13595d3e74c63c59f7d79241acc97888e9a7a5c791159c85c3ccd
+    </div>
+
+    <p>SHA-2 is a family of four hash functions: SHA-224, SHA-256, SHA-384, and SHA-512. SHA-256 and SHA-512 are the most commonly used.</p>
+
+    <h3>SHA-3</h3>
+    <p>SHA-3 is the latest family of hashing algorithms and offers better security:</p>
+    <pre><code># hash with SHA-3
+print("SHA-3-256:", hashlib.sha3_256(message).hexdigest())
+print("SHA-3-512:", hashlib.sha3_512(message).hexdigest())</code></pre>
+    <div class="output">Output: 
+        <br>SHA-3-256: d7007c1cd52f8168f22fa25ef011a5b3644bcb437efa46de34761d3340187609
+        <br>SHA-3-512: de6b4c8f7d4fd608987c123122bcc63081372d09b4bc14955bfc828335dec1246b5c6633c5b1c87d2ad2b777d713d7777819263e7ad675a3743bf2a35bc699d0
+    </div>
+
+    <h3>BLAKE2</h3>
+    <p>BLAKE2 is faster than SHA-1, SHA-2, SHA-3, and even MD5, and more secure than SHA-2:</p>
+    <pre><code># hash with BLAKE2
+# 256-bit BLAKE2 (or BLAKE2s)
+print("BLAKE2c:", hashlib.blake2s(message).hexdigest())
+# 512-bit BLAKE2 (or BLAKE2b)
+print("BLAKE2b:", hashlib.blake2b(message).hexdigest())</code></pre>
+    <div class="output">Output: 
+        <br>BLAKE2c: 6889074426b5454d751547cd33ca4c64cd693f86ce69be5c951223f3af845786
+        <br>BLAKE2b: 13e2ca8f6a282f27b2022dde683490b1085b3e16a98ee77b44b25bc84a0366afe8d70a4aa47dd10e064f1f772573513d64d56e5ef646fb935c040b32f67e5ab2
+    </div>
+
+    <h2>Conclusion</h2>
+    <p>BLAKE2 hashes are faster than SHA-1, SHA-2, SHA-3, and MD5, and more secure than SHA-2. BLAKE2 is widely used and has been integrated into major cryptography libraries such as OpenSSL and Sodium.</p>
+    <p>To hash an entire file, you can read the file content and pass the bytes to any of the functions we covered.</p>
+    <p>For further reading, refer to the official Python documentation for the <code>hashlib</code> module.</p>
+    <p>Finally, if you're interested in ethical hacking, check out our guide where we build 35+ hacking tools and scripts using Python!</p>
+    
+    <h2>Examples are from the following article:</h2>
+    <p>How to Use Hashing Algorithms in Python using hashlib - <a href="https://thepythoncode.com/article/build-a-password-manager-in-python">https://thepythoncode.com/article/build-a-password-manager-in-python</a></p>
+
+    
+    <footer class="home-link">
+        <a href="../index.html">Click here to go back to Home</a>
+    </footer>
+</body>
+</html>
